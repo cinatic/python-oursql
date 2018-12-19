@@ -12,9 +12,3 @@ format.
 Source is forked from the original launchpad https://launchpad.net/oursql
 0.9.4 is the latest original version
 
-
-## Changelog
-
-### 0.9.4
-* latest original source check -> https://code.launchpad.net/~jerub/oursql/py3k
-

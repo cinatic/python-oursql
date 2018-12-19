@@ -1,3 +1,12 @@
+0.9.4 -> 0.9.5
+--------------
+  * added workaround for utf8mb4
+
+0.9.3 -> 0.9.4
+--------------
+  * Update trove classifier to Python :: 3 instead of Python :: 2 in the oursql/py3k branch
+  * Fix version numbers for 0.9.4
+
 0.9.2 -> 0.9.3
 --------------
 

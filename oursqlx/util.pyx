@@ -1,5 +1,8 @@
 cdef object bytes_maybe_from_encoding(object s, object encoding, 
         bint allow_none=True):
+    if encoding == 'utf8mb4':
+        encoding = 'utf8'
+
     if s is None and allow_none:
         return None
     elif PyUnicode_Check(s):

@@ -252,14 +252,21 @@ cdef class Connection:
             self._charset = PyUnicode_FromStringAndSize(
                 PyBytes_AS_STRING(self._charset_bytes),
                 PyBytes_GET_SIZE(self._charset_bytes))
+
+            if self._charset == 'utf8mb4':
+                self._charset = 'utf8'
+                self._charset_bytes = b'utf8'
+
             return self._charset
         def __set__(self, value):
             self._check_closed()
             svalue = PyUnicode_AsUTF8String(value)
             if mysql_set_character_set(self.conn, PyBytes_AS_STRING(svalue)):
                 self._raise_error()
+
             self._charset_bytes = svalue
             self._charset = value
+
     
     cdef object _decode_char_p(self, const_char *value):
         cdef Py_ssize_t length = strlen(value)

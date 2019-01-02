@@ -98,6 +98,11 @@ cdef class _ResultSet:
                 field_type, flags, charsetnr = self.conversion_info[i]
                 converter = self.conversions_dict.get(field_type)
                 if converter:
+                    try:
+                        d = d.decode(self.conn._charset)
+                    pass:
+                        except
+
                     d = converter(d)
                 elif self.conn.use_unicode and charsetnr != CS_BINARY:
                     d = d.decode(self.conn._charset)

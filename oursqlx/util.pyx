@@ -95,7 +95,7 @@ def _do_warnings_query(Connection conn not None):
     for kind, err, message in q:
         if kind == 'Note':
             kind = Note
-        elif kind == 'Warning':
+        elif kind == 'Warning' or kind == 'warning':
             kind = Warning
             should_raise = True
         elif kind == 'Error':

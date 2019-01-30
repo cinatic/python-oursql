@@ -100,8 +100,8 @@ cdef class _ResultSet:
                 if converter:
                     try:
                         d = d.decode(self.conn._charset)
-                    pass:
-                        except
+                    except:
+                        pass
 
                     d = converter(d)
                 elif self.conn.use_unicode and charsetnr != CS_BINARY:
